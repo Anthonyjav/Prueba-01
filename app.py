@@ -58,7 +58,7 @@ def administrar():
     registros=obtener_registros()
     return render_template('administrar.html',registros=registros)
 
-@app.route('/eliminar/<dni>', methods=['POST'])
+@app.route('/eliminar/<dni>', methods=['GET'])
 def eliminar_registro(dni):
     conn = psycopg2.connect(
         dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST)

@@ -35,21 +35,19 @@
         </tr>
         </thead>
         <tbody>
-        {% for persona in registros %}
-            <tr>
-                <td>{{ persona[0] }}</td>
-                <td>{{ persona[1] }}</td>
-                <td>{{ persona[2] }}</td>
-                <td>{{ persona[3] }}</td>
-                <td>{{ persona[4] }}</td>
-                <td>
-                    <form action="/eliminar/{{ persona[0] }}" method="post" onsubmit="return confirm('¿Estás seguro de eliminar este registro?');">
-                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                    </form>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
+            {% for persona in registros %}
+                <tr>
+                    <td>{{ persona[0] }}</td>
+                    <td>{{ persona[1] }}</td>
+                    <td>{{ persona[2] }}</td>
+                    <td>{{ persona[3] }}</td>
+                    <td>{{ persona[4] }}</td>
+                    <td>
+                        <a href="/eliminar/{{ persona[0] }}" onclick="return confirm('¿Estás seguro de eliminar este registro?');" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
     </table>
 
     <a href="/" class="btn btn-primary volver-btn">Volver a Registrar</a>
